@@ -1,0 +1,18 @@
+{
+    "name": "fzaninotto/faker",
+    "autoload": {
+        "psr-4": {
+            "Fzaninotto\\Faker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yoshiya-m",
+            "email": "2101115016rz@cyber-u.ac.jp"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.5",
+        "nesbot/carbon": "^3.8"
+    }
+}
