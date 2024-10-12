@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const [key, value] of formData.entries()) {
             console.log(`${key}:`, value);
         }
-        url = 'http://localhost:8000/create';
+        url = 'https://img-board-app.yoshm.com/create';
         fetch(url, {
             method: 'POST',
             body: formData
@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 if (data.status === "success") {
                     if (currentPath === "/reply-form") {
-                        window.location.href = 'http://localhost:8000/thread?post_id=' + postId;
+                        window.location.href = 'https://img-board-app.yoshm.com/thread?post_id=' + postId;
                     } else {
-                        window.location.href = 'http://localhost:8000/thread?post_id=' + data.post_id;
+                        window.location.href = 'https://img-board-app.yoshm.com/thread?post_id=' + data.post_id;
                     }
                     
                 } else {
