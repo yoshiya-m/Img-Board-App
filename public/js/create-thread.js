@@ -57,6 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append("post_id", postId);
         }
 
+        let totalSize = 0;
+
+        for (const [key, value] of formData.entries()) {
+          if (value instanceof File) {
+            totalSize += value.size; // ファイルのサイズを加算
+          } else {
+            totalSize += new Blob([`${key}=${value}`]).size; // テキストデータのサイズを加算
+          }
+        }
+        if (totalSize >= 1000000) {
+            const diff = totalSize - 1000000;
+            alert('画像サイズが大きすぎます!\n' + diff + "バイト減らしてください");
+            return;
+        }
 
         url = 'https://img-board-app.yoshm.com/create';
         fetch(url, {
