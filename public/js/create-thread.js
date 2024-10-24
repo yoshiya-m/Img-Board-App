@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         dropArea.classList.remove('hover');
 
-        droppedFile = event.dataTransfer.files[0]; // ドロップされたファイルを取得
+        droppedFile = event.dataTransfer.files[0]; 
 
         const reader = new FileReader();
 
@@ -38,16 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         reader.readAsDataURL(droppedFile); // ファイルを読み込む
 
-
-        console.log(droppedFile);
         fileName.innerHTML = droppedFile.name;
-        console.log('file dropped');
     })
 
 
     // 投稿ボタンクリック
     createBtn.addEventListener('click', () => {
-        console.log('clicked create thread');
 
         const subject = document.getElementById("subject").value;
         const content = document.getElementById("content").value;
@@ -61,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append("post_id", postId);
         }
 
-        for (const [key, value] of formData.entries()) {
-            console.log(`${key}:`, value);
-        }
+
         url = 'https://img-board-app.yoshm.com/create';
         fetch(url, {
             method: 'POST',
