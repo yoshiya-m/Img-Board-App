@@ -1,6 +1,9 @@
 <div class="d-flex align-items-center m-3">
-    <div class="drop-area d-flex justify-content-center align-items-center p-0 w-50" id="drop-area">
+    <div class="drop-area d-flex flex-column justify-content-center align-items-center p-0 w-50" id="drop-area">
         <p>ここにファイルをドラッグ＆ドロップ</p>
+        <button id="file-button" type="button" class="btn btn-info">またはクリック</button>
+        <input type="file" id="file-input" class="d-none" accept=".png, .jpg, .jpeg, .gif">
+
     </div>
     <!-- 画像プレビュー -->
     <div class="w-50">
